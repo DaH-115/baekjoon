@@ -5,18 +5,17 @@ const input = fs.readFileSync(filePath).toString().split('\n');
 solution(+input[0]);
 
 function solution(N) {
-  for (let line = 1; line <= N; line++) {
-    const star = line;
-    const space = N - line;
-    let stars = '';
+  for (let i = 1; i <= N; i++) {
+    let stars = ' ';
+    const star = i;
+    const space = N - i;
 
-    for (let i = 0; i < space; i++) {
+    for (let j = 1; j <= space; j++) {
       stars += ' ';
     }
-    for (let i = 0; i < star; i++) {
+    for (let j = 1; j <= star; j++) {
       stars += '*';
     }
-
     console.log(stars);
   }
 }
