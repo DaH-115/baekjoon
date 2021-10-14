@@ -1,19 +1,17 @@
-const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.text';
-let input = fs.readFileSync(filePath).toString().split('\n');
+let input = Number(require('fs').readFileSync('/dev/stdin').toString());
 
-let N = +input;
-let addN = 0;
+let num = Number(input);
+let addNum = 0;
 let count = 0;
-let isNotSame = true;
 
 while (true) {
-  addN = Math.floor(N / 10) + (N % 10);
-  N = (N % 10) * 10 + (addN % 10);
+  addNum = Math.floor(num / 10) + (num % 10);
+  num = (num % 10) * 10 + (addNum % 10);
   count++;
 
-  if (N == input) {
-    return console.log(count);
-    // isNotSame = false;
+  if (Number(input) === num) {
+    break;
   }
 }
+
+console.log(count);
