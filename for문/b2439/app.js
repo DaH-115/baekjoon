@@ -6,7 +6,7 @@ solution(+input[0]);
 
 function solution(N) {
   for (let i = 1; i <= N; i++) {
-    let stars = ' ';
+    let stars = '';
     const star = i;
     const space = N - i;
 
